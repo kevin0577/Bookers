@@ -31,6 +31,15 @@
 </tbody>
 </table>
 
+<% if @booknew.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @booknew.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <h3>New book</h3>
 <%= form_for(@booknew) do |f| %>
